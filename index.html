@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title></title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 name">Fade In Left</div>
+        <div class="col-sm-4 name-container name-container1" id="name1">Shaunak Sen</div>
+        <div class="col-sm-2">
+            <div id="name1-button" class="animation-switch animation-switch1"><i class="fa fa-play"></i></div>
+        </div>
+        <div class="col-sm-4">
+            <input type="range" min="0.8" max="2.8" step="0.5" id="range1" class="animation-range">
+            <div class="control-left">Faster</div>
+            <div class="control-right">Slower</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 name">Shake</div>
+        <div class="col-sm-4 name-container name-container2" id="name2">Mini Sen</div>
+        <div class="col-sm-2">
+            <div id="name2-button" class="animation-switch animation-switch2"><i class="fa fa-play"></i></div>
+        </div>
+        <div class="col-sm-4">
+            <input type="range" min="0.8" max="2.8" step="0.5" id="range2" class="animation-range">
+            <div class="control-left">Faster</div>
+            <div class="control-right">Slower</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 name">Bounce In</div>
+        <div class="col-sm-4 name-container name-container3" id="name3">Abhijeet Padhy</div>
+        <div class="col-sm-2">
+            <div id="name3-button" class="animation-switch animation-switch3"><i class="fa fa-play"></i></div>
+        </div>
+        <div class="col-sm-4">
+            <input type="range" min="0.8" max="2.8" step="0.5" id="range3" class="animation-range">
+            <div class="control-left">Faster</div>
+            <div class="control-right">Slower</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 name">Flip In X</div>
+        <div class="col-sm-4 name-container name-container4" id="name4">Apurba Sarkar</div>
+        <div class="col-sm-2">
+            <div id="name4-button" class="animation-switch animation-switch4"><i class="fa fa-play"></i></div>
+        </div>
+        <div class="col-sm-4">
+            <input type="range" min="0.8" max="2.8" step="0.5" id="range4" class="animation-range">
+            <div class="control-left">Faster</div>
+            <div class="control-right">Slower</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 name">Jello</div>
+        <div class="col-sm-4 name-container name-container5" id="name5">Saurav Biswas</div>
+        <div class="col-sm-2">
+            <div id="name5-button" class="animation-switch animation-switch5"><i class="fa fa-play"></i></div>
+        </div>
+        <div class="col-sm-4">
+            <input type="range" min="0.8" max="2.8" step="0.5" id="range5" class="animation-range">
+            <div class="control-left">Faster</div>
+            <div class="control-right">Slower</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 name">Flash</div>
+        <div class="col-sm-4 name-container name-container6" id="name6">Bhagban Dutta</div>
+        <div class="col-sm-2">
+            <div id="name6-button" class="animation-switch animation-switch6"><i class="fa fa-play"></i></div>
+        </div>
+        <div class="col-sm-4">
+            <input type="range" min="0.8" max="2.8" step="0.5" id="range6" class="animation-range">
+            <div class="control-left">Faster</div>
+            <div class="control-right">Slower</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 name">Fade Out Left</div>
+        <div class="col-sm-4 name-container name-container7" id="name7">Arnab Chakraborty</div>
+        <div class="col-sm-2">
+            <div id="name7-button" class="animation-switch animation-switch7"><i class="fa fa-play"></i></div>
+        </div>
+        <div class="col-sm-4">
+            <input type="range" min="0.8" max="2.8" step="0.5" id="range7" class="animation-range">
+            <div class="control-left">Faster</div>
+            <div class="control-right">Slower</div>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    $(function(){
+
+
+        startAnimation('animated fadeInLeft infinite', 1);
+        startAnimation('animated shake infinite', 2);
+        startAnimation('animated bounceIn infinite', 3);
+        startAnimation('animated flipInX infinite', 4);
+        startAnimation('animated jello infinite', 5);
+        startAnimation('animated flash infinite', 6);
+        startAnimation('animated fadeOutLeft infinite', 7);
+
+
+        function startAnimation(animationType, divNo)
+        {
+            var animation = animationType;
+            var animationON = 0;
+            var animationSwitch = "#name" + divNo + "-button";
+            var animationObject = "#name" + divNo;
+            var range = '#range' + divNo;
+            $(animationSwitch).on('click',function(){
+                if(animationON == 0) {
+                    $(animationObject).addClass(animation);
+                    animationON = 1;
+                    $(this).html('<i class="fa fa-pause"></i>');
+                }
+                else
+                {
+                    $(animationObject).removeClass(animation);
+                    animationON = 0;
+                    $(this).html('<i class="fa fa-play"></i>');
+                }
+            });
+            $(range).on('change',function(){
+                $animationDuration = $(this).val();
+                $animationDurationInSecs = $animationDuration + "s";
+                $(animationObject).css('animation-duration',$animationDurationInSecs);
+            });
+        }
+
+    });
+
+</script>
+</body>
+</html>
